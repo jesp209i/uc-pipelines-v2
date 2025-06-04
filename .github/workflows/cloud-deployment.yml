@@ -23,13 +23,13 @@ on:
       noBuildAndRestore:
         description: 'Skip build and restore steps'
         required: false
-        type: boolean
-        default: false
+        type: number
+        default: 0
       skipVersionCheck:
         description: 'Skip version check'
         required: false
-        type: boolean
-        default: false
+        type: number
+        default: 0
 
     secrets:
       projectId:
@@ -59,8 +59,8 @@ jobs:
           -ArtifactId ${{ inputs.artifactId }}
           -TargetEnvironmentAlias ${{ inputs.targetEnvironmentAlias }}
           -CommitMessage "Run number ${{github.run_number}}" 
-          -NoBuildAndRestore ${{ inputs.noBuildAndRestore == 'true' }}
-          -SkipVersionCheck ${{ inputs.skipVersionCheck == 'true' }}
+          -NoBuildAndRestore ${{ inputs.noBuildAndRestore }}
+          -SkipVersionCheck ${{ inputs.skipVersionCheck }}
           -PipelineVendor GITHUB
 
   awaitDeploymentFinished:
