@@ -6,14 +6,8 @@ on:
     branches:
       - main
   workflow_dispatch:
-   inputs:
-     targetEnvironmentAlias:
-       description: 'The alias of the target environment for the workflow'
-       required: true
-       default: 'live'
 
-
-jobs:
+jobs:  
   cloud-sync:
     name: "Umbraco Cloud Sync"
     uses: ./.github/workflows/cloud-sync.yml
@@ -21,8 +15,7 @@ jobs:
       projectId: ${{ secrets.PROJECT_ID }}
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
     with:
-      targetEnvironmentAlias: ${{ inputs.targetEnvironmentAlias }}
-      
+      targetEnvironmentAlias: ${{ vars.TARGET_ENVIRONMENT_ALIAS }}
   cloud-artifact:
     name: "Prepare and Upload Artifact"
     uses: ./.github/workflows/cloud-artifact.yml
@@ -41,4 +34,4 @@ jobs:
       targetEnvironmentAlias: ${{ inputs.targetEnvironmentAlias }}
     secrets:
       PROJECT_ID: ${{ secrets.PROJECT_ID }}
-      UMBRACO_CLOUD_API_KEY: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
+      UMBRACO_CLOUD_API_KEY: ${{ vars.TARGET_ENVIRONMENT_ALIAS }}
