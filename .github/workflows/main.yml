@@ -31,7 +31,7 @@ jobs:
     uses: ./.github/workflows/cloud-deployment.yml
     with:
       artifactId: ${{ needs.cloud-artifact.outputs.artifactId }}
-      targetEnvironmentAlias: ${{ inputs.targetEnvironmentAlias }}
+      targetEnvironmentAlias: ${{ vars.TARGET_ENVIRONMENT_ALIAS }}
     secrets:
       PROJECT_ID: ${{ secrets.PROJECT_ID }}
-      UMBRACO_CLOUD_API_KEY: ${{ vars.TARGET_ENVIRONMENT_ALIAS }}
+      UMBRACO_CLOUD_API_KEY: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
