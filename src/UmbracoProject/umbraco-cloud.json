@@ -1,7 +1,17 @@
 {
   "Deploy": {
     "Project": {
-      "Workspaces": []
+      "Name": "pipelines on github v2",
+      "Alias": "pipelines-on-github-v2",
+      "Id": "e0a16799-d34f-46ca-ac8f-3e3bac85fd79",
+      "Workspaces": [
+        {
+          "Id": "e907267f-0ee1-40f5-985e-21aaeefdbe99",
+          "Name": "Live",
+          "Type": "live",
+          "Url": "https://pipelines-on-github-v2.euwest01.rainbowsrock.net"
+        }
+      ]
     },
     "Settings": {}
   },
