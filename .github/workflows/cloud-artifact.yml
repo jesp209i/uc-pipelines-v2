@@ -14,12 +14,14 @@ on:
     outputs:
       artifactId:
         description: 'The Id of the uploaded artifact'
-        value: ${{ jobs.uploadArtifact.outputs.artifactId }}
+        value: ${{ jobs.upload-artifact.outputs.artifactId }}
 
 jobs:
   prepareDeployment:
-    name: Prepare Deployment to cloud
+    name: Prepare Artifact to cloud
     runs-on: ubuntu-latest
+    outputs:
+      artifactId: ${{ steps.upload-artifact.outputs.artifactId }}
     steps:
       - uses: actions/checkout@v4
         with:
