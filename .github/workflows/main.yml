@@ -10,7 +10,7 @@ on:
      targetEnvironmentAlias:
        description: 'The alias of the target environment for the workflow'
        required: true
-       default: 'flexible'
+       default: 'live'
 
 
 jobs:
