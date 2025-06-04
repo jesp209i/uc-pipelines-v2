@@ -14,7 +14,7 @@ on:
     outputs:
       artifactId:
         description: 'The Id of the uploaded artifact'
-        value: ${{ jobs.upload-artifact.outputs.artifactId }}
+        value: ${{ jobs.prepareDeployment.outputs.artifactId }}
 
 jobs:
   prepareDeployment:
