@@ -28,7 +28,7 @@ jobs:
       # switch the gitignore files so cloud does not ignore the build frontend assets
       # zip everything, except what is defined in the 'cloud.zipignore'
       - name: Prepare Cloud Git Ignore
-        run: >
+        run: |
           echo "switching .gitignore with cloud.gitignore"
           cp cloud.gitignore .gitignore
           echo "Packing artifact for upload"
