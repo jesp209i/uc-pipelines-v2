@@ -54,7 +54,7 @@ jobs:
           -TargetEnvironmentAlias ${{ inputs.targetEnvironmentAlias }}
           -CommitMessage "Run number ${{github.run_number}}" 
           -NoBuildAndRestore $False
-          -SkipVersionCheck $False
+          -SkipVersionCheck $True
           -PipelineVendor GITHUB
 
 
