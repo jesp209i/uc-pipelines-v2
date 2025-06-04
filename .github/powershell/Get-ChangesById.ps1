@@ -26,7 +26,7 @@ param(
 
     [Parameter(Position=6)]    
     [string] 
-    $BaseUrl = "https://api.cloud.umbraco.com"
+    $BaseUrl = "https://api.dev-cloud.umbraco.com"
 )
 
 ### Endpoint docs
