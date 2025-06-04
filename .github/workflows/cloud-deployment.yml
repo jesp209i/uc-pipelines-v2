@@ -73,5 +73,5 @@ jobs:
         run: >
           ${{GITHUB.WORKSPACE}}/.github/powershell/Test-DeploymentStatus.ps1 
           -ProjectId ${{ secrets.PROJECT_ID }} 
-          -DeploymentId ${{ env.runningDeploymentId }} 
           -ApiKey ${{ secrets.UMBRACO_CLOUD_API_KEY }}
+          -DeploymentId ${{ env.runningDeploymentId }} 

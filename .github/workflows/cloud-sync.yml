@@ -30,9 +30,9 @@ jobs:
         shell: pwsh
         run: >
           ${{GITHUB.WORKSPACE}}/.github/powershell/Get-LatestDeployment.ps1 
-          -ProjectId ${{ env.projectId }} 
-          -ApiKey ${{ env.umbracoCloudApiKey }} 
-          -TargetEnvironmentAlias ${{ env.targetEnvironmentAlias }}
+          -ProjectId ${{ secrets.projectId }} 
+          -ApiKey ${{ secrets.umbracoCloudApiKey }} 
+          -TargetEnvironmentAlias ${{ inputs.targetEnvironmentAlias }}
           -PipelineVendor GITHUB
     outputs: 
       latestDeploymentId: ${{ steps.latest-deployment.outputs.latestDeploymentId }}
@@ -54,10 +54,10 @@ jobs:
         shell: pwsh
         run: >
           ${{GITHUB.WORKSPACE}}/.github/powershell/Get-ChangesById.ps1 
-          -ProjectId ${{ env.projectId }} 
-          -ApiKey ${{ env.umbracoCloudApiKey }} 
+          -ProjectId ${{ secrets.projectId }} 
+          -ApiKey ${{ secrets.umbracoCloudApiKey }} 
           -DeploymentId ${{ env.latestDeploymentId }}
-          -TargetEnvironmentAlias ${{ env.targetEnvironmentAlias }}
+          -TargetEnvironmentAlias ${{ inputs.targetEnvironmentAlias }}
           -DownloadFolder ${{GITHUB.WORKSPACE}}/patch
           -PipelineVendor GITHUB
 
