@@ -1,4 +1,4 @@
-name: pipeline
+name: pipeline # You can add your own name for the pipeline here
 
 # Trigger when committing to main branch
 on:
@@ -35,6 +35,8 @@ jobs:
     with:
       artifactId: ${{ needs.cloud-artifact.outputs.artifactId }}
       targetEnvironmentAlias: ${{ vars.TARGET_ENVIRONMENT_ALIAS }}
+      noBuildAndRestore: "false"
+      skipVersionCheck: "false"
     secrets:
       PROJECT_ID: ${{ secrets.PROJECT_ID }}
       UMBRACO_CLOUD_API_KEY: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
