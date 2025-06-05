@@ -27,13 +27,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Get Latest Deployment
         id: latest-deployment
-        shell: bash
+        shell: pwsh
         run: >
-          bash ${{ GITHUB.WORKSPACE }}/.github/scripts/get_latest_deployment.sh 
-          ${{ secrets.projectId }} 
-          ${{ secrets.umbracoCloudApiKey }} 
-          ${{ inputs.targetEnvironmentAlias }} 
-          GITHUB
+          ${{GITHUB.WORKSPACE}}/.github/powershell/Get-LatestDeployment.ps1 
+          -ProjectId ${{ secrets.projectId }} 
+          -ApiKey ${{ secrets.umbracoCloudApiKey }} 
+          -TargetEnvironmentAlias ${{ inputs.targetEnvironmentAlias }}
+          -PipelineVendor GITHUB
     outputs: 
       latestDeploymentId: ${{ steps.latest-deployment.outputs.latestDeploymentId }}
 
@@ -51,15 +51,15 @@ jobs:
           latestDeploymentId: ${{ needs.preflight.outputs.latestDeploymentId }}
         if: ${{ env.latestDeploymentId != '' }}
         id: latest-changes
-        shell: bash
+        shell: pwsh
         run: >
-          bash ${{ GITHUB.WORKSPACE }}/.github/scripts/get_changes_by_id.sh 
-          ${{ secrets.projectId }} 
-          ${{ secrets.umbracoCloudApiKey }} 
-          ${{ env.latestDeploymentId }} 
-          ${{ inputs.targetEnvironmentAlias }} 
-          ${{ GITHUB.WORKSPACE }}/patch 
-          GITHUB 
+          ${{GITHUB.WORKSPACE}}/.github/powershell/Get-ChangesById.ps1 
+          -ProjectId ${{ secrets.projectId }} 
+          -ApiKey ${{ secrets.umbracoCloudApiKey }} 
+          -DeploymentId ${{ env.latestDeploymentId }}
+          -TargetEnvironmentAlias ${{ inputs.targetEnvironmentAlias }}
+          -DownloadFolder ${{GITHUB.WORKSPACE}}/patch
+          -PipelineVendor GITHUB
 
       - name: See diff content if any
         if: ${{ steps.latest-changes.outputs.remoteChanges == 'yes' }}
@@ -112,13 +112,13 @@ jobs:
           gitName: github-actions
           gitEmail: github-actions@github.com
         if: ${{ env.remoteChanges == 'yes' }}
-        shell: bash
+        shell: pwsh
         run: >
-          bash ${{ GITHUB.WORKSPACE }}/.github/scripts/apply_patch.sh 
-          ${{ GITHUB.WORKSPACE }}/patch/git-patch.diff 
-          ${{ env.latestDeploymentId }} 
-          GITHUB
-          ${{ env.gitName }}
-          ${{ env.gitEmail }}
+          ${{GITHUB.WORKSPACE}}/.github/powershell/Apply-Patch.ps1
+          -PatchFile ${{ GITHUB.WORKSPACE }}/patch/git-patch.diff 
+          -LatestDeploymentId ${{ env.latestDeploymentId }} 
+          -PipelineVendor GITHUB
+          -GitUserName ${{ env.gitName }}
+          -GitUserEmail ${{ env.gitEmail }}
     outputs:
       newSha: ${{ steps.update-bundle.outputs.updatedSha }}
