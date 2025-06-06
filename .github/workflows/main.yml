@@ -9,13 +9,13 @@ on:
   workflow_dispatch: # Allow manual triggering of the workflow
 
 jobs:
-
+  # resolve which environment to deploy to based on triggering branch
   set-env:
     runs-on: ubuntu-latest
     outputs:
       targetEnvironmentAlias: ${{ steps.set.outputs.targetEnvironmentAlias }}
     steps:
-      - name: yolobolo
+      - name: Resolve Target Environment
         id: set
         run: |
           echo "Triggering branch: ${{ github.ref_name }}"
