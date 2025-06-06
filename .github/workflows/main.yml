@@ -9,13 +9,13 @@ on:
   workflow_dispatch: # Allow manual triggering of the workflow
 
 jobs:
-
+  # resolve which environment to deploy to based on triggering branch
   set-env:
     runs-on: ubuntu-latest
     outputs:
       targetEnvironmentAlias: ${{ steps.set.outputs.targetEnvironmentAlias }}
     steps:
-      - name: yolobolo
+      - name: Resolve Target Environment
         id: set
         run: |
           echo "Triggering branch: ${{ github.ref_name }}"
@@ -56,7 +56,7 @@ jobs:
   # Deploy to Umbraco Cloud
   # ####
   # you can edit the variables noBuildAndRestore and skipVersionCheck    
-  # use 0 for false and 1 for true
+  # use booleans but as strings
   cloud-deployment:
     name: "Deploy to Cloud"
     needs: [set-env, cloud-artifact]
@@ -64,8 +64,8 @@ jobs:
     with:
       artifactId: ${{ needs.cloud-artifact.outputs.artifactId }}
       targetEnvironmentAlias: ${{ needs.set-env.outputs.targetEnvironmentAlias }}
-      noBuildAndRestore: 1
-      skipVersionCheck: 1
+      noBuildAndRestore: "true"
+      skipVersionCheck: "true"
     secrets:
       projectId: ${{ secrets.PROJECT_ID }}
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
