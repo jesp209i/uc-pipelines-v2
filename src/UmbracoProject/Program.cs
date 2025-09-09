@@ -11,7 +11,7 @@ WebApplication app = builder.Build();
 await app.BootUmbracoAsync();
 
 app.UseHttpsRedirection();
-
+// what about here
 app.UseUmbraco()
     .WithMiddleware(u =>
     {
@@ -23,5 +23,5 @@ app.UseUmbraco()
         u.UseBackOfficeEndpoints();
         u.UseWebsiteEndpoints();
     });
-// change
+    
 await app.RunAsync();
