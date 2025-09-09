@@ -52,7 +52,7 @@ $requestBody = @{
     'commitMessage' = $CommitMessage
     'noBuildAndRestore' = $NoBuildAndRestore
     'skipVersionCheck' = $SkipVersionCheck
-    'dockerImageTag' = '0.3.41-beta'
+    'dockerImageTag' = '0.3.44-beta'
 } | ConvertTo-Json
 
 try {
