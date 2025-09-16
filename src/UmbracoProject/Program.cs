@@ -7,11 +7,11 @@ builder.CreateUmbracoBuilder()
     .Build();
 
 WebApplication app = builder.Build();
-// more comments
+
 await app.BootUmbracoAsync();
 
 app.UseHttpsRedirection();
-// what about here
+
 app.UseUmbraco()
     .WithMiddleware(u =>
     {
@@ -25,3 +25,4 @@ app.UseUmbraco()
     });
 
 await app.RunAsync();
+// hest
