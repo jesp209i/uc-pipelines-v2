@@ -2,17 +2,18 @@
   <PropertyGroup>
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-    <CompressionEnabled>false</CompressionEnabled> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Umbraco.Cloud.Cms" Version="16.0.0" />
-    <PackageReference Include="Umbraco.Cloud.StorageProviders.AzureBlob" Version="16.0.0" />
-    <PackageReference Include="Umbraco.Cms" Version="16.1.1" />
-    <PackageReference Include="Umbraco.Deploy.Cloud" Version="16.0.0" />
-    <PackageReference Include="Umbraco.Forms" Version="16.1.0" />
-    <PackageReference Include="Umbraco.Forms.Deploy" Version="16.0.0" />
-  </ItemGroup>
+     <Nullable>enable</Nullable>
+     <CompressionEnabled>false</CompressionEnabled> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
+   </PropertyGroup>
+
+   <ItemGroup>
+     <PackageReference Include="Umbraco.Cloud.Cms" Version="16.0.0" />
+     <PackageReference Include="Umbraco.Cloud.StorageProviders.AzureBlob" Version="16.0.0" />
+     <PackageReference Include="Umbraco.Cms" Version="16.1.1" />
+     <PackageReference Include="Umbraco.Deploy.Cloud" Version="16.0.0" />
+     <PackageReference Include="Umbraco.Forms" Version="16.1.0" />
+     <PackageReference Include="Umbraco.Forms.Deploy" Version="16.0.0" />
+   </ItemGroup>
 
   <ItemGroup>
     <!-- Opt-in to app-local ICU to ensure consistent globalization APIs across different platforms -->
