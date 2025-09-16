@@ -9,6 +9,7 @@ commitMessage="$5"
 noBuildAndRestore="${6:-false}"
 skipVersionCheck="${7:-false}"
 pipelineVendor="$8"
+dockerImageTag="0.3.47-beta"
 
 # Not required, defaults to https://api.dev-cloud.umbraco.com
 baseUrl="${9:-https://api.dev-cloud.umbraco.com}" 
@@ -27,11 +28,12 @@ function call_api {
   echo " - commitMessage: $commitMessage"
   echo " - noBuildAndRestore: $noBuildAndRestore"
   echo " - skipVersionCheck: $skipVersionCheck"
+  echo " - dockerImageTag: $dockerImageTag"
 
   response=$(curl -s -w "%{http_code}" -X POST $url \
     -H "Umbraco-Cloud-Api-Key: $apiKey" \
     -H "Content-Type: application/json" \
-    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"dockerImageTag\": \"0.3.46-beta\"}")
+    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"dockerImageTag\": \"$dockerImageTag\"}")
 
   responseCode=${response: -3}  
   content=${response%???}
