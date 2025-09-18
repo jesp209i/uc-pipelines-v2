@@ -1,2 +1,2 @@
 namespace UmbracoProject;
-public class hest {}
+public class pony {}
