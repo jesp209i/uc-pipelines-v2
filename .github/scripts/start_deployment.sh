@@ -10,7 +10,7 @@ noBuildAndRestore="${6:-false}"
 skipVersionCheck="${7:-false}"
 pipelineVendor="$8"
 dockerImageTag="0.3.52-beta"
-allowAnyTarget="true"
+allowAnyTarget=true
 
 # Not required, defaults to https://api.dev-cloud.umbraco.com
 baseUrl="${9:-https://api.dev-cloud.umbraco.com}" 
