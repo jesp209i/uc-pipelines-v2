@@ -67,7 +67,8 @@ jobs:
     uses: ./.github/workflows/cloud-deployment.yml
     with:
       artifactId: ${{ needs.cloud-artifact.outputs.artifactId }}
-      targetEnvironmentAlias: ${{ needs.set-env.outputs.targetEnvironmentAlias }}
+      #targetEnvironmentAlias: ${{ needs.set-env.outputs.targetEnvironmentAlias }}
+      targetEnvironmentAlias: "live"      
       noBuildAndRestore: "true"
       skipVersionCheck: "true"
     secrets:
