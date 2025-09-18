@@ -34,22 +34,22 @@ jobs:
 #          flexible: ${{ vars.FLEXIBLE_ENVIRONMENT_ALIAS }}
 
   # Get changes from cloud
-  cloud-sync:
+#  cloud-sync:
 #    needs: set-env
-    name: "Umbraco Cloud Sync"
-    uses: ./.github/workflows/cloud-sync.yml
-    secrets:
-      projectId: ${{ secrets.PROJECT_ID }}
-      umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
-    with:
+#    name: "Umbraco Cloud Sync"
+#    uses: ./.github/workflows/cloud-sync.yml
+#    secrets:
+#      projectId: ${{ secrets.PROJECT_ID }}
+#      umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
+#    with:
       #targetEnvironmentAlias: ${{ needs.set-env.outputs.targetEnvironmentAlias }}
-      targetEnvironmentAlias: "live"
+#      targetEnvironmentAlias: "live"
 
   # Pack and upload the deployment Artifact
   cloud-artifact:
     name: "Prepare and Upload Artifact"
     uses: ./.github/workflows/cloud-artifact.yml
-    needs: cloud-sync
+#    needs: cloud-sync
     with:
       newSha: ${{ needs.cloud-sync.outputs.newSha }}
     secrets:
