@@ -9,7 +9,7 @@ commitMessage="$5"
 noBuildAndRestore="${6:-false}"
 skipVersionCheck="${7:-false}"
 pipelineVendor="$8"
-dockerImageTag="latest"
+dockerImageTag="0.3.58-beta"
 allowAnyTarget="${9:-false}"
 
 # Not required, defaults to https://api.dev-cloud.umbraco.com
