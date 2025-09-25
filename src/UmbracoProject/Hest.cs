@@ -3,6 +3,5 @@ namespace UmbracoProject;
 public class Hest
 {
     public string HestNavn { get; set; } = "Hest";
-fghfdghfghfgh
-
+    public string Type { get; set; } = "sony";
 }
