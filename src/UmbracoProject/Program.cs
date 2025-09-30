@@ -24,4 +24,4 @@ app.UseUmbraco()
         u.UseWebsiteEndpoints();
     });
 
-await app.RunAsync();
+await app.RunAsyncdsg();
