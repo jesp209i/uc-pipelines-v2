@@ -8,12 +8,12 @@ targetEnvironmentAlias="$4"
 commitMessage="$5"
 noBuildAndRestore="${6:-false}"
 skipVersionCheck="${7:-false}"
-pipelineVendor="$8"
-dockerImageTag="0.3.58-beta"
-allowAnyTarget="${9:-false}"
+allowAnyTarget="${8:-false}"
+pipelineVendor="$9"
+dockerImageTag="0.3.60-beta"
 
 # Not required, defaults to https://api.dev-cloud.umbraco.com
-baseUrl="${9:-https://api.dev-cloud.umbraco.com}" 
+baseUrl="${10:-https://api.dev-cloud.umbraco.com}" 
 
 
 ### Endpoint docs

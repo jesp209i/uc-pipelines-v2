@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       artifactId:
+        description: 'The id of the artifact to deploy'
         required: false
         type: string
       targetEnvironmentAlias:
@@ -27,6 +28,11 @@ on:
         default: "false"
       skipVersionCheck:
         description: 'Skip version check'
+        required: false
+        type: string
+        default: "false"
+      allowAnyTarget:
+        description: 'Trigger to allow any target'
         required: false
         type: string
         default: "false"
@@ -61,6 +67,7 @@ jobs:
           "Run for ${{ github.run_number }}"
           ${{ inputs.noBuildAndRestore}}
           ${{ inputs.skipVersionCheck }}
+          ${{ inputs.allowAnyTarget }}
           GITHUB
 
   awaitDeploymentFinished:
