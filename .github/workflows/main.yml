@@ -70,7 +70,7 @@ jobs:
       #targetEnvironmentAlias: ${{ needs.set-env.outputs.targetEnvironmentAlias }}
       targetEnvironmentAlias: "dev"      
       noBuildAndRestore: "true"
-      skipVersionCheck: "true"
+      skipVersionCheck: "false"
       allowAnyTarget: "true"
     secrets:
       projectId: ${{ secrets.PROJECT_ID }}
