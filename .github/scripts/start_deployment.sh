@@ -10,7 +10,11 @@ noBuildAndRestore="${6:-false}"
 skipVersionCheck="${7:-false}"
 allowAnyTarget="${8:-false}"
 pipelineVendor="$9"
+runSchemaExtraction="${10:-false}"
+skipPreserveUmbracoCLoudJson="${11:-false}"
+
 dockerImageTag="0.3.70-beta"
+
 
 # Not required, defaults to https://api.dev-cloud.umbraco.com
 baseUrl="${10:-https://api.dev-cloud.umbraco.com}" 
@@ -31,11 +35,13 @@ function call_api {
   echo " - skipVersionCheck: $skipVersionCheck"
   echo " - dockerImageTag: $dockerImageTag"
   echo " - allowAnyTarget: $allowAnyTarget"
+  echo " - runSchemaExtraction: $runSchemaExtraction"
+  echo " - skipPreserveUmbracoCLoudJson: $skipPreserveUmbracoCLoudJson"
 
   response=$(curl -s -w "%{http_code}" -X POST $url \
     -H "Umbraco-Cloud-Api-Key: $apiKey" \
     -H "Content-Type: application/json" \
-    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"dockerImageTag\": \"$dockerImageTag\"}")
+    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"dockerImageTag\": \"$dockerImageTag\",\"skipPreserveUmbracoCLoudJson\": \"$skipPreserveUmbracoCLoudJson\",\"runSchemaExtraction\": \"$runSchemaExtraction\"}")
 
   responseCode=${response: -3}  
   content=${response%???}
