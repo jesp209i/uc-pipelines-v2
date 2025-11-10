@@ -11,7 +11,7 @@ skipVersionCheck="${7:-false}"
 allowAnyTarget="${8:-false}"
 pipelineVendor="$9"
 runSchemaExtraction="${10:-false}"
-skipPreserveUmbracoCLoudJson="${11:-false}"
+skipPreserveUmbracoCloudJson="${11:-false}"
 
 dockerImageTag="0.3.70-beta"
 
