@@ -36,12 +36,12 @@ function call_api {
   echo " - dockerImageTag: $dockerImageTag"
   echo " - allowAnyTarget: $allowAnyTarget"
   echo " - runSchemaExtraction: $runSchemaExtraction"
-  echo " - skipPreserveUmbracoCLoudJson: $skipPreserveUmbracoCLoudJson"
+  echo " - skipPreserveUmbracoCloudJson: $skipPreserveUmbracoCloudJson"
 
   response=$(curl -s -w "%{http_code}" -X POST $url \
     -H "Umbraco-Cloud-Api-Key: $apiKey" \
     -H "Content-Type: application/json" \
-    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"dockerImageTag\": \"$dockerImageTag\",\"skipPreserveUmbracoCLoudJson\": \"$skipPreserveUmbracoCLoudJson\",\"runSchemaExtraction\": \"$runSchemaExtraction\"}")
+    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"dockerImageTag\": \"$dockerImageTag\",\"skipPreserveUmbracoCloudJson\": $skipPreserveUmbracoCloudJson,\"runSchemaExtraction\": $runSchemaExtraction}")
 
   responseCode=${response: -3}  
   content=${response%???}
