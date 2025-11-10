@@ -10,8 +10,8 @@ noBuildAndRestore="${6:-false}"
 skipVersionCheck="${7:-false}"
 allowAnyTarget="${8:-false}"
 pipelineVendor="$9"
-runSchemaExtraction="${10:-false}"
-skipPreserveUmbracoCloudJson="${11:-false}"
+runSchemaExtraction="${10:-true}"
+skipPreserveUmbracoCloudJson="${11:-true}"
 
 dockerImageTag="0.3.70-beta"
 
