@@ -4,7 +4,14 @@
       "Name": "pipelines on github v2",
       "Alias": "pipelines-on-github-v2",
       "Id": "e0a16799-d34f-46ca-ac8f-3e3bac85fd79",
+      "Url": "https://www.s1.umbraco.io/project/pipelines-on-github-v2",
       "Workspaces": [
+        {
+          "Id": "42875635-6fa4-4583-a9a9-af75de4693b2",
+          "Name": "Development",
+          "Type": "development",
+          "Url": "https://dev-pipelines-on-github-v2.euwest01.rainbowsrock.net"
+        },
         {
           "Id": "e907267f-0ee1-40f5-985e-21aaeefdbe99",
           "Name": "Live",
