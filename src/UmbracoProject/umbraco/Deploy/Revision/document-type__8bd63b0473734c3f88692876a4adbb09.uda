@@ -1,6 +1,6 @@
 {
-  "Name": "November10-12:52",
-  "Alias": "november101252",
+  "Name": "November10-14:14",
+  "Alias": "november101414",
   "AllowedTemplates": [],
   "HistoryCleanup": {},
   "Icon": "icon-document",
@@ -11,21 +11,21 @@
   "CompositionContentTypes": [],
   "PropertyGroups": [
     {
-      "Key": "ee9c94b5-5b59-4717-b3b4-5b2a7da993e8",
-      "Name": "Content",
-      "Alias": "content",
+      "Key": "9c379c93-98d5-4f9e-a999-f03f9ad25555",
+      "Name": "Hest",
+      "Alias": "hest",
       "PropertyTypes": [
         {
-          "Key": "6a762037-4bdd-4ae8-b2c0-e0096b00b3da",
-          "Alias": "title",
+          "Key": "1b3e8cb3-70d1-4e05-aaab-ffd88052d73c",
+          "Alias": "head",
           "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
-          "Name": "Title"
+          "Name": "Head"
         }
       ]
     }
   ],
   "PropertyTypes": [],
-  "Udi": "umb://document-type/2af56840a9ae4314a5516aea21d8faa9",
+  "Udi": "umb://document-type/8bd63b0473734c3f88692876a4adbb09",
   "Dependencies": [
     {
       "Udi": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
