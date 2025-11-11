@@ -1,0 +1,37 @@
+{
+  "Name": "November11-12:40",
+  "Alias": "november111240",
+  "AllowedTemplates": [],
+  "HistoryCleanup": {},
+  "Icon": "icon-document",
+  "Thumbnail": "folder.png",
+  "Permissions": {
+    "AllowedChildContentTypes": []
+  },
+  "CompositionContentTypes": [],
+  "PropertyGroups": [
+    {
+      "Key": "ca211e86-7e0a-4261-b082-3ea53032455a",
+      "Name": "Hest",
+      "Alias": "hest",
+      "PropertyTypes": [
+        {
+          "Key": "35449acc-b229-482a-9996-e56156793416",
+          "Alias": "article",
+          "DataType": "umb://data-type/421a53fff7c341a38d33b39b74051e46",
+          "Name": "Article"
+        }
+      ]
+    }
+  ],
+  "PropertyTypes": [],
+  "Udi": "umb://document-type/c096f169540e47f8815a16049cac5391",
+  "Dependencies": [
+    {
+      "Udi": "umb://data-type/421a53fff7c341a38d33b39b74051e46",
+      "Ordering": true
+    }
+  ],
+  "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
+  "__version": "16.0.2"
+}
