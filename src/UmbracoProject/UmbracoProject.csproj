@@ -23,7 +23,7 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <!-- Razor files are needed for the backoffice to work correctly -->
+    <!-- Razor files are needed for the backoffice to work correctly hest-->
     <CopyRazorGenerateFilesToPublishDirectory>true</CopyRazorGenerateFilesToPublishDirectory>
   </PropertyGroup>
 
