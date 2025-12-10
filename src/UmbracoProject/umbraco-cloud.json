@@ -32,5 +32,8 @@
     "LocalLoginRedirectUri": "https://redirect.identity-dev.umbraco.com",
     "Tenant": "umbracoiddev.onmicrosoft.com",
     "TenantId": "948da452-daba-4a0b-8b16-c91433e8f27d"
+  },
+  "Bubber": {
+    "Hest": "ignore mig"
   }
 }
