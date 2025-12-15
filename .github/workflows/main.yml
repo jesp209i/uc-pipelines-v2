@@ -43,7 +43,7 @@ jobs:
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
     with:
      #targetEnvironmentAlias: ${{ needs.set-env.outputs.targetEnvironmentAlias }}
-       targetEnvironmentAlias: "live"
+       targetEnvironmentAlias: "dev"
 
   # Pack and upload the deployment Artifact
   cloud-artifact:
@@ -68,7 +68,7 @@ jobs:
     with:
       artifactId: ${{ needs.cloud-artifact.outputs.artifactId }}
       #targetEnvironmentAlias: ${{ needs.set-env.outputs.targetEnvironmentAlias }}
-      targetEnvironmentAlias: "live"      
+      targetEnvironmentAlias: "dev"      
       noBuildAndRestore: "true"
       skipVersionCheck: "true"
       allowAnyTarget: "true"
