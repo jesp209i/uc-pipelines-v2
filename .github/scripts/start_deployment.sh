@@ -13,7 +13,7 @@ pipelineVendor="$9"
 runSchemaExtraction="${10:-true}"
 skipPreserveUmbracoCloudJson="${11:-true}"
 
-dockerImageTag="0.3.86-beta"
+dockerImageTag="0.3.87-beta"
 
 
 # Not required, defaults to https://api.dev-cloud.umbraco.com
