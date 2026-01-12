@@ -12,7 +12,7 @@ await app.BootUmbracoAsync();
 
 app.UseHttpsRedirection();
 
-app.UseSitecore()
+app.UseUmbraco()
     .WithMiddleware(u =>
     {
         u.UseBackOffice();
