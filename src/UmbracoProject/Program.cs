@@ -12,7 +12,7 @@ await app.BootUmbracoAsync();
 
 app.UseHttpsRedirection();
 
-app.UseUmbraco()
+app.UseUmbracoNope()
     .WithMiddleware(u =>
     {
         u.UseBackOffice();
@@ -25,4 +25,3 @@ app.UseUmbraco()
     });
 
 await app.RunAsync();
-// ponyhesti
