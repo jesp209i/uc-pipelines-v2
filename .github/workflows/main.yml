@@ -71,7 +71,7 @@ jobs:
       targetEnvironmentAlias: "live"      
       noBuildAndRestore: "true"
       skipVersionCheck: "true"
-      allowAnyTarget: "false"
+      allowAnyTarget: "true"
     secrets:
       projectId: ${{ secrets.PROJECT_ID }}
       umbracoCloudApiKey: ${{ secrets.UMBRACO_CLOUD_API_KEY }}
