@@ -12,8 +12,6 @@ await app.BootUmbracoAsync();
 
 app.UseHttpsRedirection();
 
-//hello
-
 app.UseUmbraco()
     .WithMiddleware(u =>
     {
