@@ -6,18 +6,16 @@ apiKey="$2"
 artifactId="$3"
 targetEnvironmentAlias="$4"
 commitMessage="$5"
-noBuildAndRestore="${6:-false}"
-skipVersionCheck="${7:-false}"
-allowAnyTarget="${8:-false}"
-pipelineVendor="$9"
-runSchemaExtraction="${10:-true}"
-skipPreserveUmbracoCloudJson="${11:-true}"
+skipPreserveUmbracoCloudJson="${6:-false}"
+noBuildAndRestore="${7:-false}"
+skipVersionCheck="${8:-false}"
+runSchemaExtraction="${9:-true}"
+pipelineVendor="${10}"
 
 dockerImageTag="latest"
 
-
 # Not required, defaults to https://api.dev-cloud.umbraco.com
-baseUrl="${10:-https://api.dev-cloud.umbraco.com}" 
+baseUrl="${11:-https://api.dev-cloud.umbraco.com}" 
 
 
 ### Endpoint docs
@@ -31,17 +29,16 @@ function call_api {
   echo " - targetEnvironmentAlias: $targetEnvironmentAlias"
   echo " - artifactId: $artifactId"
   echo " - commitMessage: $commitMessage"
+  echo " - skipPreserveUmbracoCloudJson: $skipPreserveUmbracoCloudJson" 
   echo " - noBuildAndRestore: $noBuildAndRestore"
   echo " - skipVersionCheck: $skipVersionCheck"
-  echo " - dockerImageTag: $dockerImageTag"
-  echo " - allowAnyTarget: $allowAnyTarget"
   echo " - runSchemaExtraction: $runSchemaExtraction"
-  echo " - skipPreserveUmbracoCloudJson: $skipPreserveUmbracoCloudJson"
+  echo " - dockerImageTag: $dockerImageTag"
 
   response=$(curl -s -w "%{http_code}" -X POST $url \
     -H "Umbraco-Cloud-Api-Key: $apiKey" \
     -H "Content-Type: application/json" \
-    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"dockerImageTag\": \"$dockerImageTag\",\"skipPreserveUmbracoCloudJson\": $skipPreserveUmbracoCloudJson,\"runSchemaExtraction\": $runSchemaExtraction,\"allowAnyTarget\": $allowAnyTarget}")
+    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"runSchemaExtraction\": $runSchemaExtraction,\"skipPreserveUmbracoCloudJson\": $skipPreserveUmbracoCloudJson, \"dockerImageTag\": \"$dockerImageTag\"}")
 
   responseCode=${response: -3}  
   content=${response%???}
@@ -74,13 +71,13 @@ function call_api {
   errorResponse=$content
   echo "Unexpected API Response Code: $responseCode - More details below"
   # Check if the input is valid JSON
-  cat "$errorResponse" | jq . > /dev/null 2>&1
+  echo "$errorResponse" | jq . > /dev/null 2>&1
   if [ $? -ne 0 ]; then
       echo "--- Response RAW ---\n"
-      cat "$errorResponse"
-  else 
+      echo "$errorResponse"
+  else
       echo "--- Response JSON formatted ---\n"
-      cat "$errorResponse" | jq .
+      echo "$errorResponse" | jq .
   fi
   echo "\n---Response End---"
   exit 1
