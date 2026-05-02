@@ -11,7 +11,7 @@ WebApplication app = builder.Build();
 await app.BootUmbracoAsync();
 
 app.UseHttpsRedirection();
-
+// yolo
 app.UseUmbraco()
     .WithMiddleware(u =>
     {
