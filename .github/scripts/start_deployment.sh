@@ -12,7 +12,7 @@ skipVersionCheck="${8:-false}"
 runSchemaExtraction="${9:-true}"
 pipelineVendor="${10}"
 
-dockerImageTag="latest"
+dockerImageTag="0.3.110-beta"
 
 # Not required, defaults to https://api.dev-cloud.umbraco.com
 baseUrl="${11:-https://api.dev-cloud.umbraco.com}" 
