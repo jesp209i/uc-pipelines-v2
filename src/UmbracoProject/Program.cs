@@ -25,5 +25,3 @@ app.UseUmbraco()
     });
 
 await app.RunAsync();
-
-// hesten er glad
