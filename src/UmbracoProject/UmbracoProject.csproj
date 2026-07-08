@@ -14,7 +14,7 @@
     <PackageReference Include="Umbraco.Deploy.Cloud" Version="17.1.0" />
     <PackageReference Include="Umbraco.Forms" Version="17.4.1" />
     <PackageReference Include="Umbraco.Forms.Deploy" Version="17.0.0" />
-    <PackageReference Include="JamUmbPac" Version="1.*" />
+    <!--<PackageReference Include="JamUmbPac" Version="1.*" />-->
   </ItemGroup>
 
   <ItemGroup>
