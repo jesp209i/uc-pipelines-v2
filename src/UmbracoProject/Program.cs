@@ -26,4 +26,3 @@ app.UseUmbraco()
 
 await app.RunAsync();
 
-//force deploy more force
