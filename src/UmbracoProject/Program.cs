@@ -23,6 +23,6 @@ app.UseUmbraco()
         u.UseBackOfficeEndpoints();
         u.UseWebsiteEndpoints();
     });
-
+//hest
 await app.RunAsync();
 
