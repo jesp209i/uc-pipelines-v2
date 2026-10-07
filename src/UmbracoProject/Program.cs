@@ -25,3 +25,5 @@ app.UseUmbraco()
     });
 
 await app.RunAsync();
+
+// fun stuff!
