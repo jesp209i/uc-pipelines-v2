@@ -25,6 +25,3 @@ app.UseUmbraco()
     });
 
 await app.RunAsync();
-
-// fun is back in town - business is as usual
-// but now with hest
