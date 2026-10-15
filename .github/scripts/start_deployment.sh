@@ -12,7 +12,7 @@ skipVersionCheck="${8:-false}"
 runSchemaExtraction="${9:-true}"
 pipelineVendor="${10}"
 
-dockerImageTag="0.3.143-beta"
+dockerImageTag="latest-beta"
 
 # Not required, defaults to https://api.dev-cloud.umbraco.com
 baseUrl="${11:-https://api.dev-cloud.umbraco.com}" 
@@ -23,7 +23,7 @@ baseUrl="${11:-https://api.dev-cloud.umbraco.com}"
 #
 url="$baseUrl/v2/projects/$projectId/deployments"
 
-# Define function to call API to start thedeployment
+# Define function to call API to start thed eployment
 function call_api {
   echo "Requesting start Deployment at $url with options:"
   echo " - targetEnvironmentAlias: $targetEnvironmentAlias"
