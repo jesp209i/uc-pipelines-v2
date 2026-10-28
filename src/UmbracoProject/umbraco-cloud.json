@@ -1,5 +1,5 @@
 {
-  "TestCase": "1.4 - package file, must replace the Cloud repo's",
+  "TestCase": "1.5 - package file, restores the Cloud repo's",
   "Deploy": {
     "Project": {
       "Name": "pipelines on github v2",
