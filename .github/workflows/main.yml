@@ -70,6 +70,8 @@ jobs:
     name: "Deploy to Cloud"
     #needs: [set-env, cloud-artifact]
     needs: [cloud-artifact]
+    # Run although cloud-sync is skipped (test 1.5): a skipped job further up skips every job below it
+    if: ${{ !cancelled() && !failure() }}
     uses: ./.github/workflows/cloud-deployment.yml
     with:
       artifactId: ${{ needs.cloud-artifact.outputs.artifactId }}
