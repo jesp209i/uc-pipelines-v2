@@ -19,8 +19,5 @@
 node_modules/*
 **/node_modules*
 
-## Tests 1.1 and 1.2 (PR 14032): leave umbraco-cloud.json out of the package, so the Cloud environment's file must be kept
-src/UmbracoProject/umbraco-cloud.json
-
 ## ignore this file
 cloud.zipignore
