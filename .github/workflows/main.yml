@@ -79,7 +79,7 @@ jobs:
       targetEnvironmentAlias: ${{ vars.TARGET_ENVIRONMENT_ALIAS }}
       noBuildAndRestore: "true"
       skipVersionCheck: "false"
-      skipPreserveUmbracoCloudJson: "false"
+      skipPreserveUmbracoCloudJson: "true"
       runSchemaExtraction: "true"
     secrets:
       projectId: ${{ secrets.PROJECT_ID }}
