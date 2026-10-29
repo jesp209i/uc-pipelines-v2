@@ -36,7 +36,7 @@ jobs:
   # Get changes from cloud
   cloud-sync:
 #    needs: set-env
-    # Tests 1.5 and 1.6 (PR 14032): off, or the direct push that removed umbraco-cloud.json in Cloud is
+    # Tests 1.5 to 1.7 (PR 14032): off, or the direct pushes that removed and restored umbraco-cloud.json in Cloud are
     # patched into this repo and the package
     if: false
     name: "Umbraco Cloud Sync"
@@ -79,7 +79,7 @@ jobs:
       targetEnvironmentAlias: ${{ vars.TARGET_ENVIRONMENT_ALIAS }}
       noBuildAndRestore: "true"
       skipVersionCheck: "false"
-      skipPreserveUmbracoCloudJson: "true"
+      skipPreserveUmbracoCloudJson: "false"
       runSchemaExtraction: "true"
     secrets:
       projectId: ${{ secrets.PROJECT_ID }}
