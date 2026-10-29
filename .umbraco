@@ -1,2 +1,3 @@
 [project]
-base = "src/UmbracoProject"
+base = "src\UmbracoProject"
+csproj = "UmbracoProject.csproj"
