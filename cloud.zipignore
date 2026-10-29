@@ -19,5 +19,8 @@
 node_modules/*
 **/node_modules*
 
+## Test 2.1 (PR 14032): leave .umbraco out of the package
+.umbraco
+
 ## ignore this file
 cloud.zipignore
