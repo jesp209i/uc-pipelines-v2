@@ -1,0 +1,36 @@
+{
+  "Deploy": {
+    "Project": {
+      "Name": "pipelines on github v2",
+      "Alias": "pipelines-on-github-v2",
+      "Id": "e0a16799-d34f-46ca-ac8f-3e3bac85fd79",
+      "Url": "https://www.s1.umbraco.io/project/pipelines-on-github-v2",
+      "Workspaces": [
+        {
+          "Id": "42875635-6fa4-4583-a9a9-af75de4693b2",
+          "Name": "Development",
+          "Type": "development",
+          "Url": "https://dev-pipelines-on-github-v2.euwest01.rainbowsrock.net"
+        },
+        {
+          "Id": "e907267f-0ee1-40f5-985e-21aaeefdbe99",
+          "Name": "Live",
+          "Type": "live",
+          "Url": "https://pipelines-on-github-v2.euwest01.rainbowsrock.net"
+        }
+      ]
+    },
+    "Settings": {
+      "ApiKey": "9A47D80D1B59C355BA49F2AE873DDDA2F7EC3EA6"
+    }
+  },
+  "Identity": {
+    "AadInstancePath": "https://identity-dev.umbraco.com",
+    "ClientId": "436cf11f-59eb-41c8-90c8-91f172386942",
+    "ClientSecret": "sfgM04UHXCGPe821C-R_5o.e.Por~Y7T0p",
+    "EnvironmentId": "e907267f-0ee1-40f5-985e-21aaeefdbe99",
+    "LocalLoginRedirectUri": "https://redirect.identity-dev.umbraco.com",
+    "Tenant": "umbracoiddev.onmicrosoft.com",
+    "TenantId": "948da452-daba-4a0b-8b16-c91433e8f27d"
+  }
+}
