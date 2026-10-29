@@ -19,5 +19,8 @@
 node_modules/*
 **/node_modules*
 
+## Test 4.2 (PR 14032): leave the unreferenced non-test project out, so only the test project is unreferenced
+src/UmbracoProject.Standalone/*
+
 ## ignore this file
 cloud.zipignore
