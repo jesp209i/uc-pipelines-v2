@@ -36,9 +36,6 @@ jobs:
   # Get changes from cloud
   cloud-sync:
 #    needs: set-env
-    # Tests 1.5 to 1.7 (PR 14032): off, or the direct pushes that removed and restored umbraco-cloud.json in Cloud are
-    # patched into this repo and the package
-    if: false
     name: "Umbraco Cloud Sync"
     uses: ./.github/workflows/cloud-sync.yml
     secrets:
@@ -53,8 +50,6 @@ jobs:
     name: "Prepare and Upload Artifact"
     uses: ./.github/workflows/cloud-artifact.yml
     needs: cloud-sync
-    # Run although cloud-sync is skipped (tests 1.5 and 1.6)
-    if: ${{ !cancelled() && !failure() }}
     with:
       newSha: ${{ needs.cloud-sync.outputs.newSha }}
     secrets:
@@ -70,8 +65,6 @@ jobs:
     name: "Deploy to Cloud"
     #needs: [set-env, cloud-artifact]
     needs: [cloud-artifact]
-    # Run although cloud-sync is skipped (tests 1.5 and 1.6): a skipped job further up skips every job below it
-    if: ${{ !cancelled() && !failure() }}
     uses: ./.github/workflows/cloud-deployment.yml
     with:
       artifactId: ${{ needs.cloud-artifact.outputs.artifactId }}
