@@ -19,6 +19,7 @@
           "Key": "35449acc-b229-482a-9996-e56156793416",
           "Alias": "article",
           "DataType": "umb://data-type/421a53fff7c341a38d33b39b74051e46",
+          "ValueType": "Umbraco.Cms.Core.Strings.IHtmlEncodedString",
           "Name": "Article"
         }
       ]
@@ -33,5 +34,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "17.0.0"
+  "__version": "17.3.1"
 }

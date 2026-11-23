@@ -19,6 +19,7 @@
           "Key": "1b3e8cb3-70d1-4e05-aaab-ffd88052d73c",
           "Alias": "head",
           "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "ValueType": "System.String",
           "Name": "Head"
         }
       ]
@@ -33,5 +34,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "17.0.0"
+  "__version": "17.3.1"
 }

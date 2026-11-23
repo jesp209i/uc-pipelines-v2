@@ -1,6 +1,6 @@
 {
-  "Name": "November10-12:52",
-  "Alias": "november101252",
+  "Name": "May3-12:34",
+  "Alias": "may31234",
   "AllowedTemplates": [],
   "HistoryCleanup": {},
   "Icon": "icon-document",
@@ -19,6 +19,7 @@
           "Key": "6a762037-4bdd-4ae8-b2c0-e0096b00b3da",
           "Alias": "title",
           "DataType": "umb://data-type/0cc0eba1996042c9bf9b60e150b429ae",
+          "ValueType": "System.String",
           "Name": "Title"
         }
       ]
@@ -33,5 +34,5 @@
     }
   ],
   "__type": "Umbraco.Deploy.Infrastructure,Umbraco.Deploy.Infrastructure.Artifacts.ContentType.DocumentTypeArtifact",
-  "__version": "17.0.0"
+  "__version": "17.3.1"
 }
