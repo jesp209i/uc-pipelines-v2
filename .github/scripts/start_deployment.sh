@@ -39,7 +39,7 @@ function call_api {
   response=$(curl -s -w "%{http_code}" -X POST $url \
     -H "Umbraco-Cloud-Api-Key: $apiKey" \
     -H "Content-Type: application/json" \
-    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"runSchemaExtraction\": $runSchemaExtraction,\"skipPreserveUmbracoCloudJson\": $skipPreserveUmbracoCloudJson, \"dockerImageTag\": \"$dockerImageTag\", \"allowAnyTarget\": true}")
+    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"runSchemaExtraction\": $runSchemaExtraction,\"skipPreserveUmbracoCloudJson\": $skipPreserveUmbracoCloudJson, \"dockerImageTag\": \"$dockerImageTag\", \"allowAnyTarget\": false}")
 
   responseCode=${response: -3}  
   content=${response%???}
