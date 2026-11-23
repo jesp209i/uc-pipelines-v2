@@ -34,11 +34,12 @@ function call_api {
   echo " - skipVersionCheck: $skipVersionCheck"
   echo " - runSchemaExtraction: $runSchemaExtraction"
   echo " - dockerImageTag: $dockerImageTag"
+  echo " - allowAnyTarget: true"
 
   response=$(curl -s -w "%{http_code}" -X POST $url \
     -H "Umbraco-Cloud-Api-Key: $apiKey" \
     -H "Content-Type: application/json" \
-    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"runSchemaExtraction\": $runSchemaExtraction,\"skipPreserveUmbracoCloudJson\": $skipPreserveUmbracoCloudJson, \"dockerImageTag\": \"$dockerImageTag\"}")
+    -d "{\"targetEnvironmentAlias\": \"$targetEnvironmentAlias\",\"artifactId\": \"$artifactId\",\"commitMessage\": \"$commitMessage\",\"noBuildAndRestore\": $noBuildAndRestore,\"skipVersionCheck\": $skipVersionCheck,\"runSchemaExtraction\": $runSchemaExtraction,\"skipPreserveUmbracoCloudJson\": $skipPreserveUmbracoCloudJson, \"dockerImageTag\": \"$dockerImageTag\", \"allowAnyTarget\": true}")
 
   responseCode=${response: -3}  
   content=${response%???}

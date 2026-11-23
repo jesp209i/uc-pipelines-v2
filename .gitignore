@@ -416,3 +416,6 @@ healthchecksdb
 **/Views/Partials/Forms/Themes/default/
 
 **/git-patch.diff
+
+# Local development values for Umbraco Cloud (umbraco cloud secrets init and pull)
+/.env.umbraco
