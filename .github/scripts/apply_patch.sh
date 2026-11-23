@@ -30,7 +30,7 @@ echo "Checking if patch can be applied..."
 if git apply "$patchFile" --ignore-space-change --ignore-whitespace --check; then
     echo "Patch needed, trying to apply now"
     echo "================================="
-    git apply "$patchFile" --ignore-space-change --ignore-whitespace
+    git apply "$patchFile" --ignore-space-change --ignore-whitespace --exclude='nuget/*'
     
     ## Write the updated Sha to the pipelines variables for use in a later step
     if [[ "$pipelineVendor" == "GITHUB" ]]; then
