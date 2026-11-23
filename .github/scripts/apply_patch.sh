@@ -27,7 +27,7 @@ fi
 
 echo "Checking if patch can be applied..."
 # check if the patch can be applied
-if git apply "$patchFile" --ignore-space-change --ignore-whitespace --check; then
+if git apply "$patchFile" --ignore-space-change --ignore-whitespace --exclude='nuget/*' --check; then
     echo "Patch needed, trying to apply now"
     echo "================================="
     git apply "$patchFile" --ignore-space-change --ignore-whitespace --exclude='nuget/*'
